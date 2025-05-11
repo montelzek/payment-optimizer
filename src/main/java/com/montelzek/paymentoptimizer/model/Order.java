@@ -11,6 +11,15 @@ public class Order {
 
     private List<String> promotions;
 
+    public Order() {
+    }
+
+    public Order(String id, BigDecimal value, List<String> promotions) {
+        this.id = id;
+        this.value = value;
+        this.promotions = promotions;
+    }
+
     public String getId() {
         return id;
     }
@@ -35,12 +44,4 @@ public class Order {
         this.promotions = promotions;
     }
 
-    @Override
-    public String toString() {
-        return "Order{" +
-                "id='" + id + '\'' +
-                ", value=" + value +
-                ", promotions=" + promotions +
-                '}';
-    }
 }

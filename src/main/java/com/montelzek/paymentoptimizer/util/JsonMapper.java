@@ -11,12 +11,11 @@ public class JsonMapper {
 
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
-    public static <T> List<T> mapToPojo(String filePath) throws IOException {
-        File file = new File(filePath);
+    public static <T> List<T> mapToPojo(File file, TypeReference<List<T>> typeReference) throws IOException {
         if (!file.exists()) {
-            throw new IOException("File not found: " + filePath);
+            throw new IOException("File not found: " + file.getPath());
         }
-        return objectMapper.readValue(file, new TypeReference<>() {});
+        return objectMapper.readValue(file, typeReference);
     }
 
 }

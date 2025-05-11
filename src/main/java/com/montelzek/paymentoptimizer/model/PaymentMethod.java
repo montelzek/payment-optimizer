@@ -6,15 +6,24 @@ public class PaymentMethod {
 
     private String id;
 
-    private int discount;
+    private BigDecimal discount;
 
     private BigDecimal limit;
+
+    public PaymentMethod() {
+    }
+
+    public PaymentMethod(String id, BigDecimal discount, BigDecimal limit) {
+        this.id = id;
+        this.discount = discount;
+        this.limit = limit;
+    }
 
     public String getId() {
         return id;
     }
 
-    public int getDiscount() {
+    public BigDecimal getDiscount() {
         return discount;
     }
 
@@ -26,7 +35,7 @@ public class PaymentMethod {
         this.id = id;
     }
 
-    public void setDiscount(int discount) {
+    public void setDiscount(BigDecimal discount) {
         this.discount = discount;
     }
 
@@ -34,12 +43,4 @@ public class PaymentMethod {
         this.limit = limit;
     }
 
-    @Override
-    public String toString() {
-        return "PaymentMethod{" +
-                "id='" + id + '\'' +
-                ", discount=" + discount +
-                ", limit=" + limit +
-                '}';
-    }
 }
